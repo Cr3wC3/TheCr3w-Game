@@ -3,18 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kartenspiel</title>
+<title>Karte ziehen</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="card">
-        <img id="cardImage" src="img/card1.png" alt="Karte">
-    </div>
-    
-    <button onclick="showRandomCard()">Zieh ne Karte</button>
-
-    <!-- JavaScript-Datei am Ende des Body-Tags -->
-    <script src="script.js"></script> <!-- Muss innerhalb von <body> stehen -->
+<div id="app">
+<!-- Kartenanzeige -->
+<div class="card">
+<!-- Bild der Karte -->
+<img id="card-image" src="img/card1.png" alt="Karte" class="card-image">
+</div>
+ 
+        <!-- Button zum Ziehen einer Karte -->
+<button onclick="drawCard()">Ziehe eine Karte</button>
+</div>
+<script src="script.js"></script>
 </body>
-
 </html>

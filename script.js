@@ -9,6 +9,6 @@ var cardImages = [
 ];
 
 function showRandomCard() {
-  var randomIndex = Math.floor(Math.random() * card-Image.length);
-  document.getElementById("cardImage").src = cardImage[randomIndex];
+  var randomIndex = Math.floor(Math.random() * card-image.length);
+  document.getElementById("card-image").src = card-image[randomIndex];
 }

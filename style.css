@@ -1,41 +1,79 @@
-/* Grundlegendes Styling */
+/* style.css */
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 20px;
-}
-
-.card {
-    width: 300px;
-    height: 450px;
-    border: 2px solid #000;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
-    background-color: white;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    height: 100vh;
+    margin: 0;
+    background-color: #f9f9f9;
 }
-
-.card img {
-    max-width: 100%;
-    max-height: 100%;
+ 
+#app {
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
 }
-
+ 
+header {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ 
+#logo {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+ 
+h1 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+ 
+.instruction {
+    font-size: 14px;
+    color: #333333;
+    margin: 15px 0;
+}
+ 
+.card {
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #ffffff;
+}
+ 
+.card-image {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+}
+ 
+.points {
+    font-size: 12px;
+    color: #333333;
+    margin-top: 10px;
+}
+ 
 button {
-    padding: 10px 20px;
+    background-color: #000000;
+    color: #ffffff;
     font-size: 16px;
-    color: #fff;
-    background-color: #000;
+    font-weight: bold;
+    padding: 12px 20px;
     border: none;
+    border-radius: 30px;
     cursor: pointer;
-    border-radius: 5px;
+    width: 100%;
+    max-width: 200px;
 }
-
+ 
 button:hover {
-    background-color: #333;
+    background-color: #333333;
 }

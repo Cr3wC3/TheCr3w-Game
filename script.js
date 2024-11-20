@@ -43,30 +43,54 @@ function drawCard() {
 
 // Funktion zum Anzeigen der Lösung
 function showSolution() {
+    // Hier gibst du die Lösung für die Karte aus
+    const solutionImageSrc = getSolutionForCard(currentCard); // Hole die Lösung der aktuellen Karte
 
-    
-    // Hier gibst du die Lösung für die Karte aus (nur Beispiel, anpassen)
-    const solution = getSolutionForCard(currentCard); // Hole die Lösung der aktuellen Karte
+    // Erstelle das Bild-Element
+    const solutionImage = document.createElement("img");
+    solutionImage.src = solutionImageSrc; // Setze die Quelle des Bildes
+    solutionImage.alt = "Lösung der Karte"; // Alternativtext für das Bild
 
-    // Zeige die Lösung an (als einfache Alert-Nachricht hier)
-    alert(solution);
+    // Optionale CSS-Klasse hinzufügen, wenn du das Bild stylen möchtest
+    solutionImage.classList.add("solution-image");
 
-    // Der Button wird wieder auf "Ziehe eine Karte" gesetzt
+    // Lösung im HTML anzeigen (im Container mit der ID 'solution-container')
+    const solutionContainer = document.getElementById("solution-container");
+    solutionContainer.innerHTML = ""; // Vorherige Lösung entfernen (falls vorhanden)
+    solutionContainer.appendChild(solutionImage); // Das neue Bild hinzufügen
+
+    // Button zurücksetzen: Ändere den Button-Text und die Funktion zurück zum Ziehen einer Karte
     const button = document.getElementById("draw-button");
     button.textContent = "Ziehe eine Karte"; // Setzt den Button-Text zurück
-    button.onclick = drawCard; // Button-Funktion wieder auf Karte ziehen zurücksetzen
+    button.onclick = drawCard; // Setzt die Funktion zurück auf "Ziehe eine Karte"
 }
+
 
 // Funktion, die die Lösung für eine Karte zurückgibt
 function getSolutionForCard(cardIndex) {
     // Hier ist nur ein einfaches Beispiel für Lösungen
-    const soulution = {
-        21: "img/Lösung-21.png",
-        22: "img/Lösung-22.png",
-        23: "img/Lösung-23.png",
-        24: "img/Lösung-24.png",
-        // Hier können alle Lösungen für Karten 21-40 hinzugefügt werden
+    const solutions = {  // Korrektur des Variablennamens (solutions statt soulution)
+        21: "img/Lösung-21.png", // Lösung für Karte 21
+        22: "img/Lösung-22.png", // Lösung für Karte 22
+        23: "img/Lösung-23.png", // Lösung für Karte 23
+        24: "img/Lösung-24.png", // Lösung für Karte 24
+        25: "img/Lösung-25.png", // Lösung für Karte 25
+        26: "img/Lösung-26.png", // Lösung für Karte 26
+        27: "img/Lösung-27.png", // Lösung für Karte 27
+        28: "img/Lösung-28.png", // Lösung für Karte 28
+        29: "img/Lösung-29.png", // Lösung für Karte 29
+        30: "img/Lösung-30.png", // Lösung für Karte 30
+        31: "img/Lösung-31.png", // Lösung für Karte 31
+        32: "img/Lösung-32.png", // Lösung für Karte 32
+        33: "img/Lösung-33.png", // Lösung für Karte 33
+        34: "img/Lösung-34.png", // Lösung für Karte 34
+        35: "img/Lösung-35.png", // Lösung für Karte 35
+        36: "img/Lösung-36.png", // Lösung für Karte 36
+        37: "img/Lösung-37.png", // Lösung für Karte 37
+        38: "img/Lösung-38.png", // Lösung für Karte 38
+        39: "img/Lösung-39.png", // Lösung für Karte 39
+        40: "img/Lösung-40.png", // Lösung für Karte 40
     };
     // Gebe die Lösung zurück, die dem Index entspricht
-    return solutions[cardIndex] || "Keine Lösung für diese Karte verfügbar.";
+    return solutions[cardIndex] || "img/default_solution.png"; // Standardbild, wenn keine Lösung vorhanden ist
 }

@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Cr3w Game Karten</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cr3w Game Karten</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="app">
-<!-- Kartenanzeige -->
-<div class="card">
-<!-- Bild der Karte -->
-<img id="card-image" src="img/1.png" alt="Karte" class="card-image">
-</div>
- 
+    <div id="app">
+        <!-- Kartenanzeige -->
+        <div class="card">
+            <!-- Bild der Karte -->
+            <img id="card-image" src="img/1.png" alt="Karte" class="card-image">
+        </div>
+
         <!-- Button zum Ziehen einer Karte -->
-<button onclick="showRandomCard()">Ziehe eine Karte</button>
-</div>
-<script src="script.js"></script>
+        <button onclick="showRandomCard()">Ziehe eine Karte</button>
+
+        <!-- Button zum Anzeigen der Lösung -->
+        <button id="action-button" onclick="showSolution()" style="display: none;">Lösung anzeigen</button>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -3,7 +3,6 @@ let currentCard = null; // Die aktuelle Karte
 
 // Gesamtzahl der Karten
 const totalCards = 100; 
-
 // Funktion zum Ziehen einer zufälligen Karte
 function drawCard() {
     // Überprüfen, ob alle Karten gezogen wurden

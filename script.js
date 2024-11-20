@@ -1,4 +1,4 @@
-const totalCards = 1000; // Anzahl der Karten
+const totalCards = 100; // Anzahl der Karten
 
 function showRandomCard() {
     // Zufallszahl zwischen 1 und totalCards generieren

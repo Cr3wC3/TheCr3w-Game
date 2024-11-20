@@ -3,22 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Cr3w Game</title>
+    <title>The Cr3w Game Karten</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="app">
+        <!-- Kartenanzeige -->
+        <div class="card">
+            <!-- Bild der Karte -->
+            <img id="card-image" src="img/1.png" alt="Karte" class="card-image">
+        </div>
 
-    <div class="container">
-        <h1>The Cr3w Game Karten</h1>
-        <div id="cardContainer">
-            <img id="cardImage" class="card-image" src="" alt="Kartenvorschau">
-            <p id="cardType"></p>
-        </div>
-        <div class="button-container">
-            <button id="drawCardButton" class="btn">Ziehe eine Karte</button>
-            <button id="solutionButton" class="btn">Lösung anzeigen</button>
-        </div>
+        <!-- Button zum Ziehen einer Karte -->
+        <button onclick="showRandomCard()">Ziehe eine Karte</button>
     </div>
-
-    <script src="game.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

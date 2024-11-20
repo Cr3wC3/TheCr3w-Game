@@ -62,6 +62,7 @@ function getSolutionForCard(cardIndex) {
         20: "Lösung der Karte 21",
         21: "Lösung der Karte 22",
         22: "Lösung der Karte 23",
+        23: "Lösung der Karte 24",
         // Hier können alle Lösungen für Karten 21-40 hinzugefügt werden
     };
 

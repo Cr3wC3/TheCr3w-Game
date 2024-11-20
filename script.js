@@ -91,6 +91,3 @@ function getSolutionForCard(cardIndex) {
         39: "img/Lösung-39.png", // Lösung für Karte 39
         40: "img/Lösung-40.png", // Lösung für Karte 40
     };
-    // Gebe die Lösung zurück, die dem Index entspricht
-    return solutions[cardIndex] || "img/default_solution.png"; // Standardbild, wenn keine Lösung vorhanden ist
-}

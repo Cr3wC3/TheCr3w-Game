@@ -1,13 +1,29 @@
+const totalCards = 100; // Gesamtzahl der Karten (z. B. 100)
+let drawnCards = []; // Liste der gezogenen Karten
 
-const totalCards = 100; // Anzahl der Karten (z. B. 100)
+// Funktion zum Ziehen einer zufälligen Karte
+function drawCard() {
+    // Überprüfen, ob alle Karten gezogen wurden
+    if (drawnCards.length === totalCards) {
+        alert("Alle Karten wurden gezogen!");
+        return;
+    }
 
-function showRandomCard() {
-    // Zufallszahl zwischen 1 und totalCards generieren
-    const randomIndex = Math.floor(Math.random() * totalCards) + 1;
+    // Zufällige Karte ziehen
+    let randomIndex;
+    do {
+        randomIndex = Math.floor(Math.random() * totalCards);
+    } while (drawnCards.includes(randomIndex));
 
-    // Dynamisch den Dateinamen erstellen (z. B. "img/5.png")
-    const newCardSrc = `img/${randomIndex}.png`;
+    // Karte zur Liste der gezogenen Karten hinzufügen
+    drawnCards.push(randomIndex);
+
+    // Dynamisch den Dateinamen der Karte erstellen (z. B. "img/1.png")
+    const newCardSrc = `img/${randomIndex + 1}.png`;
 
     // Das Bild im HTML aktualisieren
     document.getElementById("card-image").src = newCardSrc;
 }
+
+// Event Listener für den Button zum Ziehen einer Karte
+document.getElementById("drawCardButton").addEventListener("click", drawCard);

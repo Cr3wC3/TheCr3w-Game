@@ -1,32 +1,9 @@
-let drawnCards = []; // Liste der gezogenen Karten
+// Liste der gezogenen Karten
+let drawnCards = []; 
 let currentCard = null; // Die aktuelle Karte
 
 // Gesamtzahl der Karten
 const totalCards = 100; 
-
-// Objekt mit den Lösungen für die Wissenskarten (21-40)
-const solutions = {
-    21: "img/Lösung-21.png",
-    22: "img/Lösung-22.png",
-    23: "img/Lösung-23.png",
-    24: "img/Lösung-24.png",
-    25: "img/Lösung-25.png",
-    26: "img/Lösung-26.png",
-    27: "img/Lösung-27.png",
-    28: "img/Lösung-28.png",
-    29: "img/Lösung-29.png",
-    30: "img/Lösung-30.png",
-    31: "img/Lösung-31.png",
-    32: "img/Lösung-32.png",
-    33: "img/Lösung-33.png",
-    34: "img/Lösung-34.png",
-    35: "img/Lösung-35.png",
-    36: "img/Lösung-36.png",
-    37: "img/Lösung-37.png",
-    38: "img/Lösung-38.png",
-    39: "img/Lösung-39.png",
-    40: "img/Lösung-40.png"
-};
 
 // Funktion zum Ziehen einer zufälligen Karte
 function drawCard() {
@@ -67,18 +44,48 @@ function drawCard() {
 
 // Funktion zum Anzeigen der Lösung
 function showSolution() {
-    const solutionContainer = document.getElementById("solution-container");
-    const solutionImageSrc = solutions[currentCard + 1]; // +1, da die Karte mit 1 anfängt, der Index aber mit 0
+    if (currentCard >= 20 && currentCard < 40) { // Sicherstellen, dass es eine Wissenskarte ist
+        // Hole den Pfad zur Lösungskarte
+        const solutionSrc = getSolutionForCard(currentCard);
 
-    if (solutionImageSrc) {
-        // Lösungsbild anzeigen
-        solutionContainer.innerHTML = `<img src="${solutionImageSrc}" alt="Lösung" class="solution-image">`;
+        // Das Bild im HTML mit der Lösungskarte ersetzen
+        document.getElementById("card-image").src = solutionSrc;
+
+        // Den Button wieder auf "Ziehe eine Karte" setzen
+        const button = document.getElementById("draw-button");
+        button.textContent = "Ziehe eine Karte"; // Setzt den Button-Text zurück
+        button.onclick = drawCard; // Button-Funktion wieder auf Karte ziehen zurücksetzen
     } else {
-        alert("Keine Lösung für diese Karte verfügbar.");
+        console.error("Es gibt keine Lösung für diese Karte.");
     }
+}
 
-    // Der Button wird wieder auf "Ziehe eine Karte" gesetzt
-    const button = document.getElementById("draw-button");
-    button.textContent = "Ziehe eine Karte"; // Setzt den Button-Text zurück
-    button.onclick = drawCard; // Button-Funktion wieder auf Karte ziehen zurücksetzen
+// Funktion, die die Lösung für eine Karte zurückgibt
+function getSolutionForCard(cardIndex) {
+    // Hier ist die Zuordnung der Karten 21-40 zu ihren Lösungskarten
+    const solutions = {
+        20: "img/Lösung-21.png",
+        21: "img/Lösung-22.png",
+        22: "img/Lösung-23.png",
+        23: "img/Lösung-24.png",
+        24: "img/Lösung-25.png",
+        25: "img/Lösung-26.png",
+        26: "img/Lösung-27.png",
+        27: "img/Lösung-28.png",
+        28: "img/Lösung-29.png",
+        29: "img/Lösung-30.png",
+        30: "img/Lösung-31.png",
+        31: "img/Lösung-32.png",
+        32: "img/Lösung-33.png",
+        33: "img/Lösung-34.png",
+        34: "img/Lösung-35.png",
+        35: "img/Lösung-36.png",
+        36: "img/Lösung-37.png",
+        37: "img/Lösung-38.png",
+        38: "img/Lösung-39.png",
+        39: "img/Lösung-40.png"
+    };
+
+    // Gebe den Pfad zur Lösung zurück, wenn vorhanden
+    return solutions[cardIndex] || "img/default-solution.png"; // Standardbild, falls keine Lösung existiert
 }

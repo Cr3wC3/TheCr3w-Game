@@ -43,6 +43,8 @@ function drawCard() {
 
 // Funktion zum Anzeigen der Lösung
 function showSolution() {
+
+    
     // Hier gibst du die Lösung für die Karte aus (nur Beispiel, anpassen)
     const solution = getSolutionForCard(currentCard); // Hole die Lösung der aktuellen Karte
 
@@ -65,7 +67,6 @@ function getSolutionForCard(cardIndex) {
         24: "img/Lösung-24.png",
         // Hier können alle Lösungen für Karten 21-40 hinzugefügt werden
     };
-
     // Gebe die Lösung zurück, die dem Index entspricht
     return solutions[cardIndex] || "Keine Lösung für diese Karte verfügbar.";
 }

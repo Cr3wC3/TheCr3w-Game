@@ -1,69 +1,49 @@
-let drawnCards = []; // Liste der gezogenen Karten
-let currentCard = null; // Die aktuelle Karte
- 
-// Gesamtzahl der Karten
-const totalCards = 100;
- 
-// Funktion zum Ziehen einer zufälligen Karte
-function drawCard() {
-    // Überprüfen, ob alle Karten gezogen wurden
+const totalCards = 100; // Anzahl der Karten (z. B. 100)
+let drawnCards = []; // Liste der bereits gezogenen Karten
+
+// Array mit den Karten und ihren Lösungen
+const cardsWithSolutions = [
+    { cardImage: "img/1.png", solution: "Lösung für Karte 1" },
+    { cardImage: "img/2.png", solution: "Lösung für Karte 2" },
+    { cardImage: "img/3.png", solution: "Lösung für Karte 3" },
+    // ... bis zur letzten Karte
+    { cardImage: "img/100.png", solution: "Lösung für Karte 100" }
+];
+
+let currentCard = null; // Variable für die aktuelle gezogene Karte
+
+// Funktion zum Ziehen einer Karte
+function showRandomCard() {
+    // Prüfen, ob alle Karten gezogen wurden
     if (drawnCards.length === totalCards) {
-        alert(„Alle Karten wurden gezogen!“);
+        alert("Alle Karten wurden gezogen!");
         return;
     }
- 
+
     let randomIndex;
+
+    // Zufallszahl generieren, die noch nicht gezogen wurde
     do {
-        randomIndex = Math.floor(Math.random() * totalCards); // Zufällige Karte zwischen 0 und totalCards-1
-    } while (drawnCards.includes(randomIndex)); // Prüfen, ob diese Karte bereits gezogen wurde
- 
+        randomIndex = Math.floor(Math.random() * totalCards);
+    } while (drawnCards.includes(randomIndex));
+
     // Karte zur Liste der gezogenen Karten hinzufügen
     drawnCards.push(randomIndex);
-    // Die gezogene Karte speichern
-    currentCard = randomIndex;
- 
-    // Dynamisch den Dateinamen der Karte erstellen (z. B. „img/1.png“)
-    const newCardSrc = `img/${randomIndex + 1}.png`;
-    // Das Bild im HTML aktualisieren
-    document.getElementById(„card-image“).src = newCardSrc;
-    // Den Button zurücksetzen und den Text auf „Ziehe eine Karte“ setzen
-    const button = document.getElementById(„draw-button“);
-    button.textContent = „Ziehe eine Karte“; // Setzt den Text auf „Ziehe eine Karte“
-    button.onclick = drawCard; // Setzt die Funktion wieder auf Karte ziehen
- 
-    // Wenn es eine Wissenskarte ist (Karten 21-40), Button anpassen
-    if (randomIndex >= 20 && randomIndex < 40) {
-        button.textContent = „Lösung anzeigen“; // Button-Text ändern zu „Lösung anzeigen“
-        button.onclick = showSolution; // Button-Funktion ändern auf showSolution
-    }
+
+    // Die gezogene Karte und ihre Lösung
+    currentCard = cardsWithSolutions[randomIndex];
+
+    // Dynamisch das Kartenbild anzeigen
+    document.getElementById("card-image").src = currentCard.cardImage;
+
+    // Button-Text auf "Lösung anzeigen" ändern
+    document.getElementById("action-button").textContent = "Lösung anzeigen";
 }
- 
+
 // Funktion zum Anzeigen der Lösung
 function showSolution() {
- 
-    
-    // Hier gibst du die Lösung für die Karte aus (nur Beispiel, anpassen)
-    const solution = getSolutionForCard(currentCard); // Hole die Lösung der aktuellen Karte
- 
-    // Zeige die Lösung an (als einfache Alert-Nachricht hier)
-    alert(solution);
- 
-    // Der Button wird wieder auf „Ziehe eine Karte“ gesetzt
-    const button = document.getElementById(„draw-button“);
-    button.textContent = „Ziehe eine Karte“; // Setzt den Button-Text zurück
-    button.onclick = drawCard; // Button-Funktion wieder auf Karte ziehen zurücksetzen
-}
- 
-// Funktion, die die Lösung für eine Karte zurückgibt
-function getSolutionForCard(cardIndex) {
-    // Hier ist nur ein einfaches Beispiel für Lösungen
-    const soulution = {
-        21: „img/Lösung-21.png“,
-        22: „img/Lösung-22.png“,
-        23: „img/Lösung-23.png“,
-        24: „img/Lösung-24.png“,
-        // Hier können alle Lösungen für Karten 21-40 hinzugefügt werden
-    };
-    // Gebe die Lösung zurück, die dem Index entspricht
-    return solutions[cardIndex] || „Keine Lösung für diese Karte verfügbar.“;
+    // Wenn eine Karte gezogen wurde, zeige die Lösung an
+    if (currentCard) {
+        alert(currentCard.solution); // Du kannst es auch anders anzeigen, z.B. in einem Bereich auf der Seite
+    }
 }

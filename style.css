@@ -69,3 +69,10 @@ button {
 button:hover {
     background-color: #333333;
 }
+/* Styling für das Lösung-Bild */
+.solution-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px; /* Abstand zum Button */
+}
+

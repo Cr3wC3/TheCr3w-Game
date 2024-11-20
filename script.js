@@ -8,23 +8,23 @@ const cardsWithSolutions = [
     { cardImage: "img/2.png", solution: null },
     { cardImage: "img/3.png", solution: null },
     { cardImage: "img/4.png", solution: null },
-     { cardImage: "img/5.png", solution: null },
-     { cardImage: "img/6.png", solution: null },
-     { cardImage: "img/7.png", solution: null },
-     { cardImage: "img/8.png", solution: null },
-     { cardImage: "img/9.png", solution: null },
-     { cardImage: "img/10.png", solution: null },
-     { cardImage: "img/11.png", solution: null },
-     { cardImage: "img/12.png", solution: null },
-     { cardImage: "img/13.png", solution: null },
-     { cardImage: "img/14.png", solution: null },
-     { cardImage: "img/15.png", solution: null },
-     { cardImage: "img/16.png", solution: null },
-     { cardImage: "img/17.png", solution: null },
-     { cardImage: "img/18.png", solution: null },
-     { cardImage: "img/19.png", solution: null },
+    { cardImage: "img/5.png", solution: null },
+    { cardImage: "img/6.png", solution: null },
+    { cardImage: "img/7.png", solution: null },
+    { cardImage: "img/8.png", solution: null },
+    { cardImage: "img/9.png", solution: null },
+    { cardImage: "img/10.png", solution: null },
+    { cardImage: "img/11.png", solution: null },
+    { cardImage: "img/12.png", solution: null },
+    { cardImage: "img/13.png", solution: null },
+    { cardImage: "img/14.png", solution: null },
+    { cardImage: "img/15.png", solution: null },
+    { cardImage: "img/16.png", solution: null },
+    { cardImage: "img/17.png", solution: null },
+    { cardImage: "img/18.png", solution: null },
+    { cardImage: "img/19.png", solution: null },
     { cardImage: "img/20.png", solution: null },
-    
+
     // Karten 21 bis 40 (mit Lösungen)
     { cardImage: "img/21.png", solution: "img/Lösung-21.png" },
     { cardImage: "img/22.png", solution: "img/Lösung-22.png" },
@@ -46,11 +46,8 @@ const cardsWithSolutions = [
     { cardImage: "img/38.png", solution: "img/Lösung-38.png" },
     { cardImage: "img/39.png", solution: "img/Lösung-39.png" },
     { cardImage: "img/40.png", solution: "img/Lösung-40.png" },
-    
 
-
-    
-    // Karten 41 bis 100 haben keine Lösungen
+      // Karten 41 bis 100 haben keine Lösungen
     { cardImage: "img/41.png", solution: null },
     { cardImage: "img/42.png", solution: null },
     { cardImage: "img/43.png", solution: null },
@@ -113,6 +110,7 @@ const cardsWithSolutions = [
     { cardImage: "img/100.png", solution: null }
 ];
 
+
 // Variable für die aktuelle gezogene Karte
 let currentCard = null;
 
@@ -140,8 +138,12 @@ function showRandomCard() {
     // Dynamisch das Kartenbild anzeigen
     document.getElementById("card-image").src = currentCard.cardImage;
 
-    // Button-Text auf "Lösung anzeigen" ändern
+    // Button-Text auf "Lösung anzeigen" ändern und anzeigen
     document.getElementById("action-button").textContent = "Lösung anzeigen";
+    document.getElementById("action-button").style.display = "block";
+
+    // Lösung-Container verstecken, falls er vorher sichtbar war
+    document.getElementById("solution-container").style.display = "none";
 }
 
 // Funktion zum Anzeigen der Lösung
@@ -154,3 +156,8 @@ function showSolution() {
         alert("Für diese Karte gibt es keine Lösung.");
     }
 }
+
+
+
+    
+  

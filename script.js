@@ -41,32 +41,39 @@ function drawCard() {
     }
 }
 
-// Funktion zum Anzeigen der Lösung
+// Funktion zum Anzeigen der Lösung für eine Wissenskarte
 function showSolution() {
-    // Hier gibst du die Lösung für die Karte aus (nur Beispiel, anpassen)
-    const solution = getSolutionForCard(currentCard); // Hole die Lösung der aktuellen Karte
+    // Hier holst du das Bild für die Lösung der aktuellen Karte
+    const solutionImageSrc = getSolutionImageForCard(currentCard); // Holen der Bildquelle für die Lösung
 
-    // Zeige die Lösung an (als einfache Alert-Nachricht hier)
-    alert(solution);
+    // Bild-Element erstellen und anzeigen
+    const solutionImage = document.createElement("img");
+    solutionImage.src = solutionImageSrc;
+    solutionImage.alt = "Lösung der Karte";
+    solutionImage.classList.add("solution-image"); // Optional: Klasse für Styling
 
-    // Der Button wird wieder auf "Ziehe eine Karte" gesetzt
+    // Das Bild im HTML anzeigen (z.B. in einem bestimmten Div)
+    const solutionContainer = document.getElementById("solution-container");
+    solutionContainer.innerHTML = ""; // Vorherige Lösung entfernen
+    solutionContainer.appendChild(solutionImage);
+
+    // Den Button wieder auf "Ziehe eine Karte" zurücksetzen
     const button = document.getElementById("draw-button");
-    button.textContent = "Ziehe eine Karte"; // Setzt den Button-Text zurück
-    button.onclick = drawCard; // Button-Funktion wieder auf Karte ziehen zurücksetzen
+    button.textContent = "Ziehe eine Karte"; // Setzt den Button-Text auf "Ziehe eine Karte"
+    button.onclick = drawCard; // Stellt die Funktion des Buttons zurück auf "Ziehe eine Karte"
 }
 
-// Funktion, die die Lösung für eine Karte zurückgibt
-function getSolutionForCard(cardIndex) {
-    // Hier ist nur ein einfaches Beispiel für Lösungen
-    const soulution = {
-        21: "img/Lösung-21.png",
-        22: "img/Lösung-22.png",
-        23: "img/Lösung-23.png",
-        24: "img/Lösung-24.png",
-        // Hier können alle Lösungen für Karten 21-40 hinzugefügt werden
+// Funktion zum Abrufen des Bildes der Lösung für eine Karte
+function getSolutionImageForCard(cardIndex) {
+    // Beispiel-Bilder für Karten 21-40 (kannst du nach Bedarf anpassen)
+    const solutionImages = {
+        21: "img/Lösung-21.png", // Bild für Karte 21
+        22: "img/Lösung-22.png", // Bild für Karte 22
+        23: "img/Lösung-23.png", // Bild für Karte 23
+        24: "img/Lösung-24.png", // Bild für Karte 24
+        // Füge hier die weiteren Bildpfade für Karten 21-40 hinzu
     };
 
-    // Gebe die Lösung zurück, die dem Index entspricht
-    return solutions[cardIndex] || "Keine Lösung für diese Karte verfügbar.";
+    // Gib das Bild der Karte zurück (oder einen Standard-Bildpfad, wenn keine Lösung vorhanden ist)
+    return solutionImages[cardIndex] || "img/default_solution.png"; // Standardbild, wenn keine Lösung vorhanden ist
 }
-

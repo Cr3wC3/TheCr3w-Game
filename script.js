@@ -3,7 +3,7 @@ let drawnCards = []; // Liste der bereits gezogenen Karten
 
 // Array mit den Karten und ihren Lösungen
 const cardsWithSolutions = [
-    // Beispiel für Karten von 1 bis 20 (keine Lösungen im Beispiel)
+    // Karten 1 bis 20 haben keine Lösungen
     { cardImage: "img/1.png", solution: null },
     { cardImage: "img/2.png", solution: null },
     { cardImage: "img/3.png", solution: null },
@@ -25,7 +25,7 @@ const cardsWithSolutions = [
     { cardImage: "img/19.png", solution: null },
     { cardImage: "img/20.png", solution: null },
 
-    // Karten 21 bis 40 (mit Lösungen)
+    // Karten 21 bis 40 haben Lösungen
     { cardImage: "img/21.png", solution: "img/Lösung-21.png" },
     { cardImage: "img/22.png", solution: "img/Lösung-22.png" },
     { cardImage: "img/23.png", solution: "img/Lösung-23.png" },
@@ -47,7 +47,7 @@ const cardsWithSolutions = [
     { cardImage: "img/39.png", solution: "img/Lösung-39.png" },
     { cardImage: "img/40.png", solution: "img/Lösung-40.png" },
 
-      // Karten 41 bis 100 haben keine Lösungen
+    // Karten 41 bis 100 haben keine Lösungen
     { cardImage: "img/41.png", solution: null },
     { cardImage: "img/42.png", solution: null },
     { cardImage: "img/43.png", solution: null },
@@ -110,8 +110,6 @@ const cardsWithSolutions = [
     { cardImage: "img/100.png", solution: null }
 ];
 
-
-// Variable für die aktuelle gezogene Karte
 let currentCard = null;
 
 // Funktion zum Ziehen einer Karte
@@ -138,9 +136,12 @@ function showRandomCard() {
     // Dynamisch das Kartenbild anzeigen
     document.getElementById("card-image").src = currentCard.cardImage;
 
-    // Button-Text auf "Lösung anzeigen" ändern und anzeigen
-    document.getElementById("action-button").textContent = "Lösung anzeigen";
-    document.getElementById("action-button").style.display = "block";
+    // Button nur anzeigen, wenn eine Lösung existiert
+    if (currentCard.solution) {
+        document.getElementById("action-button").style.display = "block";
+    } else {
+        document.getElementById("action-button").style.display = "none";
+    }
 
     // Lösung-Container verstecken, falls er vorher sichtbar war
     document.getElementById("solution-container").style.display = "none";
@@ -149,15 +150,9 @@ function showRandomCard() {
 // Funktion zum Anzeigen der Lösung
 function showSolution() {
     if (currentCard && currentCard.solution) {
-        // Wenn es eine Lösung gibt, zeige sie an
         document.getElementById("solution-image").src = currentCard.solution;
         document.getElementById("solution-container").style.display = "block";
     } else {
         alert("Für diese Karte gibt es keine Lösung.");
     }
 }
-
-
-
-    
-  

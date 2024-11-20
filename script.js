@@ -59,10 +59,10 @@ function showSolution() {
 function getSolutionForCard(cardIndex) {
     // Hier ist nur ein einfaches Beispiel für Lösungen
     const solutions = {
-        20: "Lösung der Karte 21",
-        21: "Lösung der Karte 22",
-        22: "Lösung der Karte 23",
-        23: "Lösung der Karte 24",
+        21: "img/_Lösung-21.png",
+        22: "img/_Lösung-22.png",
+        23: "img/_Lösung-23.png",
+        24: "img/_Lösung-24.png",
         // Hier können alle Lösungen für Karten 21-40 hinzugefügt werden
     };
 

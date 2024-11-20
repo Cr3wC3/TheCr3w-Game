@@ -58,7 +58,7 @@ function showSolution() {
 // Funktion, die die Lösung für eine Karte zurückgibt
 function getSolutionForCard(cardIndex) {
     // Hier ist nur ein einfaches Beispiel für Lösungen
-    const Lösung-container = {
+    const soulution = {
         21: "img/Lösung-21.png",
         22: "img/Lösung-22.png",
         23: "img/Lösung-23.png",

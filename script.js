@@ -1,14 +1,12 @@
-var cardImages = [
-  "img/card1.png",
-  "img/card2.png",
-  "img/card3.png",
-  "img/card4.png",
-  "img/card5.png"
-
-  // Füge hier weitere Bilder hinzu
-];
+const totalCards = 1000; // Anzahl der Karten
 
 function showRandomCard() {
-  var randomIndex = Math.floor(Math.random() * card-image.length);
-  document.getElementById("card-image").src = card-image[randomIndex];
+    // Zufallszahl zwischen 1 und totalCards generieren
+    const randomIndex = Math.floor(Math.random() * totalCards) + 1;
+
+    // Dynamisch den Dateinamen erstellen, z. B. "img/card123.png"
+    const newCardSrc = `img/card${randomIndex}.png`;
+
+    // Das Bild in der HTML-Seite aktualisieren
+    document.getElementById("card-image").src = newCardSrc;
 }

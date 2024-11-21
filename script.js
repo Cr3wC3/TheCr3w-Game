@@ -64,26 +64,26 @@ function showSolution() {
 function getSolutionForCard(cardIndex) {
     // Hier ist die Zuordnung der Karten 21-40 zu ihren Lösungskarten
     const solutions = {
-        21: "img/L-21.png",
-        22: "img/L-22.png",
-        23: "img/L-23.png",
-        24: "img/L-24.png",
-        25: "img/L-25.png",
-        26: "img/L-26.png",
-        27: "img/L-27.png",
-        28: "img/L-28.png",
-        29: "img/L-29.png",
-        30: "img/L-30.png",
-        31: "img/L-31.png",
-        32: "img/L-32.png",
-        33: "img/L-33.png",
-        34: "img/L-34.png",
-        35: "img/L-35.png",
-        36: "img/L-36.png",
-        37: "img/L-37.png",
-        38: "img/L-38.png",
-        39: "img/L-39.png",
-        40: "img/L-40.png"
+        20: "img/L-21.png",
+        21: "img/L-22.png",
+        22: "img/L-23.png",
+        23: "img/L-24.png",
+        24: "img/L-25.png",
+        25: "img/L-26.png",
+        26: "img/L-27.png",
+        27: "img/L-28.png",
+        28: "img/L-29.png",
+        29: "img/L-30.png",
+        30: "img/L-31.png",
+        31: "img/L-32.png",
+        32: "img/L-33.png",
+        33: "img/L-34.png",
+        34: "img/L-35.png",
+        35: "img/L-36.png",
+        36: "img/L-37.png",
+        37: "img/L-38.png",
+        38: "img/L-39.png",
+        39: "img/L-40.png"
     };
 
     // Gebe den Pfad zur Lösung zurück, wenn vorhanden
